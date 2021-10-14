@@ -8,13 +8,13 @@ let people = [
 ];
 
 let answer = people.map(
-    (person) => 
-        person.age >=18 
-        ? console.log(`${person.name} can go to The Matrix movie.` )
-        : console.log(`Sorry, but ${person.name} don´t have minimum age to go to The Matrix movie.`)
+  (person) => 
+		person.age >=18 
+		? console.log(`${person.name} can go to The Matrix movie.` )
+		: console.log(`Sorry, but ${person.name} don´t have minimum age to go to The Matrix movie.`)
 );
 let canGoToTheMovie = people.reduce(
-  (acc, person) => {
-    person.age >= 18 ? acc++ : acc
+	(acc, person) => {
+		person.age >= 18 ? acc++ : acc
   },{}
 )

@@ -38,7 +38,7 @@ let filteredVoters = voters.reduce(
           ...acc,
           olderVoters: {
             votedCount: isVotedTrue(person)
-              ? acc.olderVoters.votedCount + 1
+							? acc.olderVoters.votedCount + 1
               : acc.olderVoters.votedCount,
           count: acc.olderVoters.count + 1,
           }
