@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora Simples</title>
+  <script src="aula19Calculador.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Calculadora</h1>
+  <main>
+    <section>
+      <input type="number" name="inputDados" id="inputDados" autofocus>
+      <button onclick="getValues()" type="button" name="enter" id="enter">Enter</button>
+    </section>
+    <section  id="operadores">
+      <label>
+        <input type="radio" name="operacao" value="+" id="somar" checked> 
+        Somar (+)
+      </label>
+      <label>
+        <input type="radio" name="operacao" value="/" id="dividir">
+          Dividir (/)
+      </label>
+      <label>
+        <input type="radio" name="operacao" value="-" id="subtrair">
+          Subtrair (-)
+      </label>
+      <label>
+        <input type="radio" name="operacao" value="*" id="multiplicar">
+        Multiplicar (*)
+      </label>
+      
+    </section>
+    <section>
+      <button onclick="calcular()" type="button" name="igual" id="igual">Resultado</button>
+    </section>
+  
+  
+</main>
+
+  <script>
+    const inputDados = document.querySelector('section #inputDados');
+    const enterButton = document.querySelector('section #enter');
+   
+    let inputDadosArray = [];
+
+    const getValues = function(){
+      inputDadosArray = [...inputDadosArray, +inputDados.value];
+      inputDados.value = '';
+      inputDados.focus();
+    };
+  </script>
+</body>
+</html>
