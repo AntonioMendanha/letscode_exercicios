@@ -109,7 +109,7 @@ class Player {
     this.stats = {
       'Win': 0,
       'Loss': 0,
-      'Played': () => {this.Win + this.Loss}
+      'Played': 0
     }
   }
   //escolhe jogada
