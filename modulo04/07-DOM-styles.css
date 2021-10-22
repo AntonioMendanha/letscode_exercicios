@@ -1,0 +1,4 @@
+section#operadores {
+  display: flex;
+  flex-direction: column;
+}

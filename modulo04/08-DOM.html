@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM - Adicionando e removendo elementos</title>
+</head>
+<body> 
+  <header>
+    <h1>Cadastro de Usuários</h1>
+  </header>
+  <main>
+    <section>
+      <form>
+        <input type="text" name="usuario" id="usuario" autofocus>
+        <button type="submit" id="submitName">Inserir</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Usuários Cadastrados</h2>
+      <ul></ul>
+    </section>
+
+  </main>
+  <script>
+    const inputUsuario = document.querySelector('input#usuario');
+    const form = document.querySelector('form');
+    const button = document.querySelector('button#submitName');
+    const ul = document.querySelector('ul');
+   
+    form.addEventListener('submit', function(evt) {
+      evt.preventDefault();
+    }    )
+
+    button.addEventListener('click' , function(){
+      const userName = inputUsuario.value;
+      const li = document.createElement('li');
+      const span = document.createElement('span');
+      const removeButton = document.createElement('button');
+      
+      li.id = userName;
+      span.textContent = userName;
+      removeButton.setAttribute('type', 'button')
+      removeButton.setAttribute('onclick', 'remover()');
+      removeButton.id = userName;
+      removeButton.textContent = 'Remover';
+      
+      ul.appendChild(li);
+      li.append(span);
+      li.append(removeButton);
+      inputUsuario.value = ''
+    })
+
+    function remover() {
+      const getButtonId = event.target.getAttribute('id');
+      const getLiToRemove = document.querySelector(`li[id="${getButtonId}"]`)
+      getLiToRemove.remove() 
+    }
+  </script>
+</body>
+</html>
