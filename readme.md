@@ -1,4 +1,5 @@
-# Conheça um pouco mais sobre o projeto
+# Readme do arquivo 06-JogoJoKenPo-grupo.js
+## Conheça um pouco mais sobre o projeto
 <div>
 <p> Projeto sugerido para ser feito em grupo durante a bolsa de estudos para Desenvolvedor WebFullStack elaborado por LetsCode e oferecida pelo Santader.<br>
 Grupo formado por:
