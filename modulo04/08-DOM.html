@@ -13,7 +13,7 @@
   <main>
     <section>
       <form>
-        <input type="text" name="usuario" id="usuario" autofocus>
+        <input type="text" name="usuario" id="usuario" required autofocus>
         <button type="submit" id="submitName">Inserir</button>
       </form>
     </section>
@@ -32,32 +32,47 @@
    
     form.addEventListener('submit', function(evt) {
       evt.preventDefault();
-    }    )
 
-    button.addEventListener('click' , function(){
-      const userName = inputUsuario.value;
-      const li = document.createElement('li');
-      const span = document.createElement('span');
-      const removeButton = document.createElement('button');
-      
-      li.id = userName;
-      span.textContent = userName;
-      removeButton.setAttribute('type', 'button')
-      removeButton.setAttribute('onclick', 'remover()');
-      removeButton.id = userName;
-      removeButton.textContent = 'Remover';
-      
-      ul.appendChild(li);
-      li.append(span);
-      li.append(removeButton);
-      inputUsuario.value = ''
-    })
+      button.onclick = (() => {
+        createUser(getInput());
+      })();
 
-    function remover() {
-      const getButtonId = event.target.getAttribute('id');
-      const getLiToRemove = document.querySelector(`li[id="${getButtonId}"]`)
-      getLiToRemove.remove() 
-    }
+      function clearInput(){
+        inputUsuario.value = ''
+      };
+
+      function getInput(){
+        const userName = inputUsuario.value;
+        clearInput();
+        return userName
+      };
+
+      function createUser(newUser) {
+        const li = document.createElement('li');
+        const span = document.createElement('span');
+        li.id = newUser;
+        span.textContent = newUser;
+        
+        ul.appendChild(li);
+        li.append(span);
+        createRemoveButton(li);
+      };
+
+      function createRemoveButton(buttonId) {
+        const removeButton = document.createElement('button');
+        removeButton.id = buttonId;
+        removeButton.textContent = 'Remover';
+        buttonId.appendChild(removeButton);
+        removeButton.onclick = (() => {
+          removerButton(buttonId)
+        })
+      };
+
+      function removerButton(buttonId) {
+         buttonId.remove() 
+        };
+
+      })
   </script>
 </body>
 </html>
