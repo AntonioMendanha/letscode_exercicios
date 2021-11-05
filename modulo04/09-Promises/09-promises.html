@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafio Promisses (Antonio Mendanha)</title>
+  <style>
+    body {
+      background: cornsilk;
+    }
+
+    button {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      width: 200px;
+      font: 1rem bold;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Desafio Promises - Antonio Mendanha</h1>
+  <header>
+      <p>Uma lista com o resultado das promessas geradas pelo botão "Gerar lista"</p>
+      <p>O "Gerar Lista" tem que criar 3 promessas (promised) que vão ser resolvidas cada uma em seu tempo (em qualquer tempo)</p>
+      <p>Cada uma dessas promessas tem que gerar um Array que vai receber um length aleatório (Math.random*10)</p>
+      <p>Cada array deve ter preenchido todo length com números aleatórios</p>
+      <p>Após essas 3 promessas serem resolvidas, exibir todos os resultados na lista criada no HTML</p>
+  </header>
+
+  <button type="button">Gerar Lista</button>
+  
+  <main>
+    <div class="results">
+      <ul class="results"></ul>
+    </div>
+
+  </main>
+
+  <script>
+    const button = document.querySelector('button');
+    const ul = document.querySelector('ul.results');
+   
+    const generateRandomNumber = () => Math.round(Math.random() * 10);
+
+    const createArray = () => {
+      let createdArray = new Array(generateRandomNumber())
+      
+      for (i = 0; i < createdArray.length  ; i++) {
+        createdArray[i] = generateRandomNumber();
+      }
+
+      return createdArray;
+    }
+
+    const randomTime = () => {
+      let randomTime = generateRandomNumber();
+      if (randomTime === 0) {
+        randomTime = 1;
+      } 
+        return randomTime * 1000;
+    }
+
+    
+    // criar função clear para limpar o resultado ao clicar no botão
+    const results = (resultToPrint) => {
+      const createli = document.createElement('li');
+      ul.appendChild(createli);
+      const li = document.querySelector('li');
+      li.innerText = resultToPrint;
+    };
+
+    const createPromise = (array, time) =>  new Promise(
+      (resolve, reject) => {
+        const delay = time();
+        const getArray = array();
+        resolve = setTimeout(() => {console.log(getArray)}, delay);
+      }
+    );
+
+    button.onclick = () => {
+      const promise1 = createPromise(createArray, randomTime);
+      const promise2 = createPromise(createArray, randomTime);
+      const promise3 = createPromise(createArray, randomTime);
+      const promises = [promise1, promise2, promise3];
+      const resultsArray = []
+
+      Promise.allSettled(promises).then(
+        (results) => results.forEach( (result) => {console.log(result)})
+        )
+
+      results(promises.value)
+      }
+
+  </script>
+</body>
+</html>
