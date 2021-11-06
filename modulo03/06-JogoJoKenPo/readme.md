@@ -37,7 +37,7 @@ Grupo formado por:
 - `jogo.memoryMatchs` -> retorna um Map, cada partida é um array.
 - `jogo.memoryplayers` -> retorna um array com cada jogador e suas estatísticas.
 </div>
-<div></div>
+
 ## Desenvolvimento do jogo
 ### Estruturas básicas
 - [x] abrir jogo
@@ -75,6 +75,3 @@ Grupo formado por:
 - [x] criar um array para guardar as partidas jogadas;
 - [ ] ao final da partida - guardar o log da partida;
 - [ ] criar a listagem de jogadores no inicio do jogo para escolher se é um jogador existente ou um novo jogador;
-
- 
-

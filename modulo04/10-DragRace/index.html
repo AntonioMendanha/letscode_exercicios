@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Drag Race</title>
+</head>
+<body>
+  <h1>Drag Race - Antonio Mendanha</h1>
+  <form>
+    <fieldset>
+      <label>
+        Nome do jogador: 
+        <input 
+          type="text" 
+          name="competitor" 
+          id="competitor" 
+          placeholder="Insira aqui o nome do jogador"
+          autofocus
+        >
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <button type="button" name="startBtn" class="--is-active">Start</button>
+      <button type="button" name="stopBtn" disabled>Stop</button>
+    </fieldset>
+  </form>
+  <div class="players">
+    <ul class="players">List of PLayers</ul>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>

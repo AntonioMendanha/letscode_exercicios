@@ -1,0 +1,16 @@
+input {
+  width: 200px;
+}
+button {
+  background-color: green;
+  border-radius: 5px;
+  width: 100px;
+  height: 30px;
+  
+}
+button:not(.--is-active) {
+  background-color: red;
+}
+button:not(.--is-active):hover {
+  cursor: not-allowed;
+}
