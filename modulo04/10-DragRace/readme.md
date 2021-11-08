@@ -1,17 +1,17 @@
 # Drag Race
-<p>Exercício do módulo de manipulação de DOM com foco em utilização de Session Storage e Local Storage</p>
+
+Exercício do módulo de manipulação de DOM com foco em utilização de Session Storage e Local Storage.
 
 ## Teste a aplicação no link abaixo
 `https://codepen.io/antoniomendanha/project/editor/AMQeJa`
 
 ### Como funciona
-<p>
+
 Você ira cronometrar o tempo individual de cada player.
 
 Após medir o tempo, a lista com o tempo dos players ficará salva na Session Storage e também será mostrada no HTML.
 
 Quem tiver o menor tempo, ficará salvo no Local Storage.
-</p>
 
 ### Como Jogar
 

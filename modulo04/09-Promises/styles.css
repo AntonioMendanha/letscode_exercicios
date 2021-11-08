@@ -1,0 +1,16 @@
+body {
+  background: cornsilk;
+}
+
+button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 200px;
+  font: 1rem bold;
+  border-radius: 5px;
+}
+
+li.results {
+  font: 2rem bold;
+}
