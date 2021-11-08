@@ -78,4 +78,3 @@ stopBtn.onclick = function () {
   getBestPlayer(bestTime, player);
   inputName.value = "";
 };
-

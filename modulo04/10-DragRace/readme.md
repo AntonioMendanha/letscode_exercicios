@@ -3,7 +3,7 @@
 Exercício do módulo de manipulação de DOM com foco em utilização de Session Storage e Local Storage.
 
 ## Teste a aplicação no link abaixo
-`https://codepen.io/antoniomendanha/project/editor/AMQeJa`
+`https://codepen.io/antoniomendanha/pen/PoKeePJ`
 
 ### Como funciona
 
