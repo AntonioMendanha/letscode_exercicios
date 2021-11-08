@@ -55,4 +55,3 @@ button.onclick = () => {
 
   getResults();
 }
-// criar função clear para limpar o resultado ao clicar no botão

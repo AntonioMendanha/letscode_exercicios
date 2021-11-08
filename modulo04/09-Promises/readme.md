@@ -3,6 +3,7 @@
 Exercício do módulo de manipulação de DOM com foco na utilização de Promises.
 
 ## Teste a aplicação no link abaixo
+>`https://codepen.io/antoniomendanha/pen/KKvRomy`
 
 ### Como funciona
   
@@ -39,3 +40,8 @@ Após essas 3 promessas serem resolvidas, exibir todos os resultados na lista cr
 > `button.onclick`
 > Cria as 3 promises que irão gerar os arrays randômicos e uma funçao para gerar os resultados;
 > `getResults` : Aguarda as 3 promises serem concluídas para imprimir o resultado na tela populando cada **li**, a última **li** gerada é o resultado pedido no exercício.
+
+### To-Do
+
+- [ ] Ajustar a resposta para mostrar somente o último array
+- [ ] Criar opção de escolher se a Promise final será **allSettled** ou **race** 
